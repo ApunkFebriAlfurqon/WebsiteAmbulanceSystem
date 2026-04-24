@@ -1,0 +1,335 @@
+
+<div class="app wrapper" id="appRoot">
+
+  <div class="hdr">
+    <div class="hdr-left">
+      <div class="hdr-icon">🚑</div>
+      <div>
+        <div class="hdr-title">MedResponse — Ambulance Command</div>
+        <div class="hdr-sub">Surabaya–Sidoarjo Area · Pusat Kendali</div>
+      </div>
+    </div>
+    <div class="live-badge"><span class="live-dot"></span>LIVE</div>
+  </div>
+
+  <div class="nav">
+    <div class="nav-tab active" onclick="switchTab('dashboard')">Dashboard</div>
+    <div class="nav-tab" onclick="switchTab('ambulans')">Ambulans</div>
+    <div class="nav-tab" onclick="switchTab('staff')">Staff</div>
+    <div class="nav-tab" onclick="switchTab('rs')">Rumah Sakit</div>
+    <div class="nav-tab" onclick="switchTab('pesan')">Pesan</div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="page active" id="page-dashboard">
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num c-green" id="d-amb-ready">9</div>
+        <div class="stat-lbl">Ambulans Siap</div>
+        <div class="stat-sub c-muted">dari 12 unit</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num c-blue" id="d-staff-active">14</div>
+        <div class="stat-lbl">Staff Aktif</div>
+        <div class="stat-sub c-muted">driver + paramedis</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num c-yellow" id="d-nurse-standby">7</div>
+        <div class="stat-lbl">Perawat Standby</div>
+        <div class="stat-sub c-muted">siap terjun</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num c-orange" id="d-rs-available">6</div>
+        <div class="stat-lbl">RS Tersedia</div>
+        <div class="stat-sub c-muted">dari 8 RS</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-title">Aktivitas Terkini</div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Waktu</th><th>Unit</th><th>Jenis</th><th>Tujuan</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>08:42</td><td>AMB-007</td><td>Darurat</td><td>RSUD Dr. Soetomo</td><td><span class="badge badge-green">Selesai</span></td></tr>
+            <tr><td>09:15</td><td>AMB-014</td><td>Rujuk</td><td>RS Premier</td><td><span class="badge badge-blue">Di jalan</span></td></tr>
+            <tr><td>09:31</td><td>AMB-022</td><td>Darurat</td><td>RS Siloam</td><td><span class="badge badge-blue">Di jalan</span></td></tr>
+            <tr><td>09:48</td><td>AMB-031</td><td>Rujuk</td><td>RS Mitra Keluarga</td><td><span class="badge badge-yellow">Standby</span></td></tr>
+            <tr><td>10:02</td><td>AMB-005</td><td>Darurat</td><td>RSUD BDH</td><td><span class="badge badge-orange">Persiapan</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-title">Kapasitas Rumah Sakit — Ringkasan</div>
+      <div class="hosp-grid">
+        <div class="hosp-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
+            <div class="hosp-name">RSUD Dr. Soetomo</div>
+            <span class="badge badge-green">Tersedia</span>
+          </div>
+          <div class="hosp-type">RS Pemerintah · Tipe A</div>
+          <div class="hosp-row"><span class="hosp-metric">IGD Tersisa</span><span class="hosp-val c-green">12 bed</span></div>
+          <div class="cap-bar"><div class="cap-fill" style="width:65%;background:#22c55e;"></div></div>
+        </div>
+        <div class="hosp-card almost">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
+            <div class="hosp-name">RS Premier Surabaya</div>
+            <span class="badge badge-orange">Hampir Penuh</span>
+          </div>
+          <div class="hosp-type">RS Swasta · Tipe B</div>
+          <div class="hosp-row"><span class="hosp-metric">IGD Tersisa</span><span class="hosp-val c-orange">3 bed</span></div>
+          <div class="cap-bar"><div class="cap-fill" style="width:88%;background:#f97316;"></div></div>
+        </div>
+        <div class="hosp-card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
+            <div class="hosp-name">RS Siloam</div>
+            <span class="badge badge-green">Tersedia</span>
+          </div>
+          <div class="hosp-type">RS Swasta · Tipe B</div>
+          <div class="hosp-row"><span class="hosp-metric">IGD Tersisa</span><span class="hosp-val c-green">8 bed</span></div>
+          <div class="cap-bar"><div class="cap-fill" style="width:55%;background:#22c55e;"></div></div>
+        </div>
+        <div class="hosp-card full">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;">
+            <div class="hosp-name">RS Mitra Keluarga</div>
+            <span class="badge badge-red">Penuh</span>
+          </div>
+          <div class="hosp-type">RS Swasta · Tipe B</div>
+          <div class="hosp-row"><span class="hosp-metric">IGD Tersisa</span><span class="hosp-val c-red">0 bed</span></div>
+          <div class="cap-bar"><div class="cap-fill" style="width:100%;background:#e63b3b;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AMBULANS -->
+  <div class="page" id="page-ambulans">
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr);">
+      <div class="stat-card"><div class="stat-num c-green">9</div><div class="stat-lbl">Siap Bertugas</div></div>
+      <div class="stat-card"><div class="stat-num c-blue">2</div><div class="stat-lbl">Sedang Bertugas</div></div>
+      <div class="stat-card"><div class="stat-num c-red">1</div><div class="stat-lbl">Maintenance</div></div>
+    </div>
+    <div class="sec-title">Armada Ambulans</div>
+    <div class="amb-grid">
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-001</div><div class="amb-type">BLS · Tipe Standar</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-005</div><div class="amb-type">ALS · Tipe ICU</div><span class="badge badge-blue">Bertugas</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-007</div><div class="amb-type">BLS · Tipe Standar</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-009</div><div class="amb-type">ALS · Tipe Neonatal</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-014</div><div class="amb-type">BLS · Tipe Standar</div><span class="badge badge-blue">Bertugas</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-019</div><div class="amb-type">BLS · Tipe Standar</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-022</div><div class="amb-type">ALS · Tipe ICU</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-027</div><div class="amb-type">BLS · Tipe Jenazah</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-031</div><div class="amb-type">BLS · Tipe Standar</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-035</div><div class="amb-type">ALS · Tipe ICU</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🚑</div><div class="amb-num">AMB-041</div><div class="amb-type">BLS · Tipe Standar</div><span class="badge badge-green">Siap</span></div>
+      <div class="amb-card"><div class="amb-icon">🔧</div><div class="amb-num">AMB-048</div><div class="amb-type">BLS · Tipe Standar</div><span class="badge badge-red">Maintenance</span></div>
+    </div>
+  </div>
+
+  <!-- STAFF -->
+  <div class="page" id="page-staff">
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr);">
+      <div class="stat-card"><div class="stat-num c-green">6</div><div class="stat-lbl">Driver Aktif</div></div>
+      <div class="stat-card"><div class="stat-num c-blue">8</div><div class="stat-lbl">Paramedis Aktif</div></div>
+      <div class="stat-card"><div class="stat-num c-yellow">7</div><div class="stat-lbl">Perawat Standby</div></div>
+    </div>
+
+    <div>
+      <div class="sec-title">Driver</div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Nama</th><th>Unit</th><th>Shift</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#1a2a3a;color:#60a5fa;">BS</div>Budi Santoso</div></td><td>AMB-001</td><td>Pagi</td><td><span class="badge badge-green">Siap</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#1a3a1a;color:#4ade80;">AW</div>Agus Wijaya</div></td><td>AMB-007</td><td>Pagi</td><td><span class="badge badge-green">Siap</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#2a1500;color:#fb923c;">HM</div>Hendra Maulana</div></td><td>AMB-014</td><td>Pagi</td><td><span class="badge badge-blue">Bertugas</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#2a2000;color:#fbbf24;">RP</div>Rizal Pratama</div></td><td>AMB-022</td><td>Siang</td><td><span class="badge badge-green">Siap</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#2a0a0a;color:#f87171;">DK</div>Dian Kurniawan</div></td><td>AMB-031</td><td>Siang</td><td><span class="badge badge-yellow">Istirahat</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#1a1a2a;color:#a78bfa;">YS</div>Yusuf Setiawan</div></td><td>AMB-035</td><td>Malam</td><td><span class="badge badge-green">Siap</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div>
+      <div class="sec-title">Paramedis & Perawat Standby</div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Nama</th><th>Peran</th><th>Keahlian</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#0a2a2a;color:#2dd4bf;">SD</div>Sari Dewi</div></td><td>Paramedis</td><td>Trauma, ALS</td><td><span class="badge badge-green">Standby</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#1a3a1a;color:#4ade80;">RN</div>Rina Novita</div></td><td>Perawat</td><td>Neonatal, ICU</td><td><span class="badge badge-green">Standby</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#1a2a3a;color:#60a5fa;">FA</div>Fahmi Aziz</div></td><td>Paramedis</td><td>Kardio, BLS</td><td><span class="badge badge-blue">Bertugas</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#2a2000;color:#fbbf24;">YK</div>Yuni Kartika</div></td><td>Perawat</td><td>Bedah, Luka</td><td><span class="badge badge-green">Standby</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#1a0a2a;color:#c084fc;">MP</div>Maya Putri</div></td><td>Perawat</td><td>Pediatri</td><td><span class="badge badge-green">Standby</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#2a1500;color:#fb923c;">TS</div>Teguh Susilo</div></td><td>Paramedis</td><td>ALS, Ventilator</td><td><span class="badge badge-yellow">Istirahat</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#0a2a2a;color:#2dd4bf;">LH</div>Laila Hanum</div></td><td>Perawat</td><td>ICU, Geriatri</td><td><span class="badge badge-green">Standby</span></td></tr>
+            <tr><td><div class="name-cell"><div class="avatar" style="background:#1a3a1a;color:#4ade80;">BP</div>Bagas Prasetyo</div></td><td>Paramedis</td><td>Trauma, Patah</td><td><span class="badge badge-green">Standby</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUMAH SAKIT -->
+  <div class="page" id="page-rs">
+    <div class="stat-row" style="grid-template-columns:repeat(3,1fr);">
+      <div class="stat-card"><div class="stat-num c-green">6</div><div class="stat-lbl">RS Tersedia</div></div>
+      <div class="stat-card"><div class="stat-num c-orange">1</div><div class="stat-lbl">Hampir Penuh</div></div>
+      <div class="stat-card"><div class="stat-num c-red">1</div><div class="stat-lbl">Penuh / Tutup</div></div>
+    </div>
+    <div class="sec-title">Status Kapasitas IGD Semua RS</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Rumah Sakit</th><th>Tipe</th><th>IGD Tersisa</th><th>Kapasitas</th><th>Status</th></tr></thead>
+        <tbody id="rs-tbody">
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RSUD Dr. Soetomo</div><div style="font-size:10px;color:var(--muted);">Gubeng, Surabaya</div></td>
+            <td>Tipe A</td>
+            <td class="c-green">12 / 35</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:65%;background:#22c55e;"></div></div></td>
+            <td><span class="badge badge-green">Tersedia</span></td>
+          </tr>
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RSUD Bhakti Dharma Husada</div><div style="font-size:10px;color:var(--muted);">Sambikerep, Surabaya</div></td>
+            <td>Tipe B</td>
+            <td class="c-green">9 / 25</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:64%;background:#22c55e;"></div></div></td>
+            <td><span class="badge badge-green">Tersedia</span></td>
+          </tr>
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RS Siloam Surabaya</div><div style="font-size:10px;color:var(--muted);">Gubeng, Surabaya</div></td>
+            <td>Tipe B</td>
+            <td class="c-green">8 / 20</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:60%;background:#22c55e;"></div></div></td>
+            <td><span class="badge badge-green">Tersedia</span></td>
+          </tr>
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RS Universitas Airlangga</div><div style="font-size:10px;color:var(--muted);">Mulyorejo, Surabaya</div></td>
+            <td>Tipe B</td>
+            <td class="c-green">5 / 18</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:72%;background:#22c55e;"></div></div></td>
+            <td><span class="badge badge-green">Tersedia</span></td>
+          </tr>
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RS Islam Jemursari</div><div style="font-size:10px;color:var(--muted);">Wonocolo, Surabaya</div></td>
+            <td>Tipe B</td>
+            <td class="c-green">7 / 22</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:68%;background:#22c55e;"></div></div></td>
+            <td><span class="badge badge-green">Tersedia</span></td>
+          </tr>
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RSUD Sidoarjo</div><div style="font-size:10px;color:var(--muted);">Sidoarjo Kota</div></td>
+            <td>Tipe B</td>
+            <td class="c-green">6 / 20</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:70%;background:#22c55e;"></div></div></td>
+            <td><span class="badge badge-green">Tersedia</span></td>
+          </tr>
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RS Premier Surabaya</div><div style="font-size:10px;color:var(--muted);">Sukolilo, Surabaya</div></td>
+            <td>Tipe B</td>
+            <td class="c-orange">3 / 20</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:85%;background:#f97316;"></div></div></td>
+            <td><span class="badge badge-orange">Hampir Penuh</span></td>
+          </tr>
+          <tr>
+            <td><div style="font-size:12px;font-weight:500;">RS Mitra Keluarga Waru</div><div style="font-size:10px;color:var(--muted);">Waru, Sidoarjo</div></td>
+            <td>Tipe B</td>
+            <td class="c-red">0 / 18</td>
+            <td><div class="progress-bar"><div class="progress-fill" style="width:100%;background:#e63b3b;"></div></div></td>
+            <td><span class="badge badge-red">Penuh</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#1a1200;border:1px solid #3a2800;border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;">
+      <span style="font-size:16px;">⚠️</span>
+      <div>
+        <div style="font-size:12px;font-weight:500;color:#fbbf24;margin-bottom:3px;">Peringatan Kapasitas</div>
+        <div style="font-size:11px;color:#a88040;line-height:1.6;">RS Mitra Keluarga Waru saat ini <strong style="color:#fb923c;">penuh</strong> — hindari merujuk pasien ke sana. RS Premier mendekati batas kapasitas. Disarankan arahkan ke RSUD Dr. Soetomo atau RS Siloam.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PESAN AMBULANS -->
+  <div class="page" id="page-pesan">
+    <div class="panic-zone">
+      <div class="panic-label">PANIC BUTTON — Hitung mundur 3 detik</div>
+      <div id="panicMain">
+        <div class="panic-btn" onmousedown="startPanic()" ontouchstart="startPanic()">
+          <div class="panic-ring"></div>
+          <span style="font-size:24px;">🆘</span>
+          <span style="font-size:12px;font-weight:500;color:#fff;">SOS</span>
+          <span style="font-size:10px;color:rgba(255,255,255,.7);">Tahan untuk aktif</span>
+        </div>
+      </div>
+      <div id="countdownArea" style="display:none;flex-direction:column;align-items:center;gap:6px;">
+        <div class="count-num" id="countNum">3</div>
+        <div class="count-txt">Memanggil ambulans darurat...</div>
+        <button class="cancel-btn" onclick="cancelPanic()">Batalkan</button>
+      </div>
+      <div style="font-size:10px;color:#555;text-align:center;">Mengirim GPS otomatis · Dispatcher dihubungi langsung</div>
+    </div>
+
+    <div class="form-sec">
+      <div class="field">
+        <label>Nama Pasien</label>
+        <input type="text" id="patName" placeholder="Masukkan nama pasien" />
+      </div>
+      <div class="field">
+        <label>Lokasi Penjemputan</label>
+        <input type="text" id="pickupLoc" placeholder="Alamat lengkap atau titik jemput" />
+      </div>
+      <div class="field">
+        <label>Pilih Rumah Sakit Tujuan</label>
+        <select id="destRS">
+          <option value="">— Pilih RS (hanya yang tersedia) —</option>
+          <option value="RSUD Dr. Soetomo">✅ RSUD Dr. Soetomo — 12 bed tersisa</option>
+          <option value="RSUD BDH">✅ RSUD Bhakti Dharma Husada — 9 bed tersisa</option>
+          <option value="RS Siloam">✅ RS Siloam Surabaya — 8 bed tersisa</option>
+          <option value="RS Unair">✅ RS Universitas Airlangga — 5 bed tersisa</option>
+          <option value="RS Islam Jemursari">✅ RS Islam Jemursari — 7 bed tersisa</option>
+          <option value="RSUD Sidoarjo">✅ RSUD Sidoarjo — 6 bed tersisa</option>
+          <option value="RS Premier" disabled style="color:#f97316;">⚠️ RS Premier — Hampir Penuh (3 bed)</option>
+          <option value="RS Mitra" disabled style="color:#f87171;">🚫 RS Mitra Keluarga — PENUH</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Jenis Layanan</label>
+        <div class="type-grid">
+          <div class="type-card sel-emg" id="tEmg" onclick="pickType('emg')">
+            <div class="type-icon">🚨</div>
+            <div class="type-name">Darurat</div>
+            <div class="type-desc">Kondisi kritis, segera</div>
+          </div>
+          <div class="type-card" id="tRef" onclick="pickType('ref')">
+            <div class="type-icon">🏥</div>
+            <div class="type-name">Rujuk Pasien</div>
+            <div class="type-desc">Pemindahan terjadwal</div>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Catatan Kondisi Pasien (opsional)</label>
+        <input type="text" id="notes" placeholder="Contoh: sesak napas, patah tulang, dll." />
+      </div>
+      <button class="btn-primary" onclick="submitOrder()">Panggil Ambulans Sekarang</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal">
+      <div class="modal-icon" id="mIcon">✅</div>
+      <div class="modal-title" id="mTitle">Ambulans Dikonfirmasi!</div>
+      <div class="modal-sub" id="mSub">Unit ambulans dalam perjalanan.</div>
+      <div class="eta-box">
+        <div class="eta-num" id="mEta">7 mnt</div>
+        <div class="eta-lbl">Estimasi tiba</div>
+      </div>
+      <div class="modal-detail" id="mDetail">Unit: AMB-007 · Pengemudi: Budi S.</div>
+      <button class="btn-ghost" style="width:100%;margin-top:4px;" onclick="closeModal()">Oke, mengerti</button>
+    </div>
+  </div>
